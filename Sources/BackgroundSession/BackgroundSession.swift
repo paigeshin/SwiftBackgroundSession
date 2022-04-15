@@ -5,18 +5,14 @@ import Combine
 // MARK: RESPONSIBLE FOR MAKING APP ALIVE IN THE BACKGROUND
 // MARK: HANDLE CALL RECEIVE EVENT
 #if !os(macOS)
-protocol TrackingSession {
-    var callEndedEvent: PassthroughSubject<Bool, Never> { get }
-    func keepAlive()
-}
 
-public class TrackingSessionImpl: NSObject, TrackingSession, CXCallObserverDelegate {
+public class BackgroundSession: NSObject, CXCallObserverDelegate {
 
     private(set) var callEndedEvent: PassthroughSubject<Bool, Never> = PassthroughSubject()
     private var player: AVPlayer?
     private let callObserver: CXCallObserver = CXCallObserver()
     
-    override init() {
+    public override init() {
         super.init()
         callObserver.setDelegate(self, queue: nil)
     }
