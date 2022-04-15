@@ -51,7 +51,7 @@ public class TrackingSessionImpl: NSObject, TrackingSession, CXCallObserverDeleg
         }
     }
     
-    func callObserver(_ callObserver: CXCallObserver, callChanged call: CXCall) {
+    public func callObserver(_ callObserver: CXCallObserver, callChanged call: CXCall) {
         if call.hasEnded == true {
             #if DEBUG
             print("Disconnected")
