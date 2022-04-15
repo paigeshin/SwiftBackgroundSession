@@ -9,6 +9,12 @@ I also attached callkit because sometimes background tasks are interrupted when 
 https://github.com/paigeshin/SwiftBackgroundSession
 ```
 
+# Activate Background Mode
+
+![1.png](./1.png)
+
+![2.png](./2.png)
+
 # Usage
 
 ```swift
