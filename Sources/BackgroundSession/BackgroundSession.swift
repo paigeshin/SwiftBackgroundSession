@@ -27,8 +27,8 @@ public class BackgroundSession: NSObject, CXCallObserverDelegate {
         } catch {
             print(error.localizedDescription)
         }
-
-        guard let url = Bundle.main.url(forResource: "session", withExtension: "m4a") else {
+        
+        guard let url = Bundle.module.url(forResource: "session", withExtension: "m4a") else {
             #if DEBUG
             print("Session Activation Failed...")
             #endif
